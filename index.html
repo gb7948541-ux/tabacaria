@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0d">
+  <meta name="description" content="NOIR TABACARIA — catálogo premium.">
+  <title>NOIR TABACARIA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="ageGate" class="age-gate" aria-modal="true" role="dialog">
+    <div class="age-gate__grain"></div>
+    <div class="age-gate__panel">
+      <div class="brand-mark brand-mark--large">N</div>
+      <p class="eyebrow">NOIR / ACESSO RESTRITO</p>
+      <h1>Uma experiência para maiores de 18.</h1>
+      <p class="age-gate__copy">Este espaço apresenta informações sobre produtos de tabacaria. Confirme sua idade para continuar.</p>
+      <button id="confirmAge" class="btn btn--primary btn--wide">Tenho 18 anos ou mais</button>
+      <button id="leaveSite" class="btn btn--ghost btn--wide">Sou menor de 18 anos</button>
+      <small>A confirmação é armazenada apenas neste navegador pelo período configurado.</small>
+    </div>
+  </div>
+
+  <div id="siteShell" class="site-shell is-locked">
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="NOIR Tabacaria">
+        <span class="brand-mark">N</span><span>NOIR</span>
+      </a>
+      <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Abrir menu">☰</button>
+      <nav id="mainNav" class="nav">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#manifesto">Manifesto</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="nav-cta" href="#catalogo">Explorar</a>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero">
+        <div class="hero__content reveal">
+          <p class="eyebrow">TABACARIA CONTEMPORÂNEA</p>
+          <h2>O ritual,<br><em>elevado.</em></h2>
+          <p class="hero__text">Uma curadoria urbana de tabacaria e acessórios, apresentada com a precisão de uma marca premium.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#catalogo">Ver catálogo</a>
+            <a class="btn btn--ghost" href="#manifesto">Conhecer a NOIR</a>
+          </div>
+        </div>
+        <div class="hero__visual reveal">
+          <img src="imagens/capa.png" alt="Imagem de capa da NOIR Tabacaria">
+          <div class="hero__badge"><span>18+</span><small>ACESSO<br>RESTRITO</small></div>
+        </div>
+      </section>
+
+      <section id="catalogo" class="section catalog">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">CURADORIA / 01</p>
+            <h3>Catálogo</h3>
+          </div>
+          <p>Conheça a seleção atual da NOIR.</p>
+        </div>
+        <div class="toolbar reveal">
+          <label class="search">
+            <span>⌕</span><input id="searchInput" type="search" placeholder="Buscar produto..." autocomplete="off">
+          </label>
+          <div id="categoryFilters" class="filters" aria-label="Categorias"></div>
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+        <div id="emptyState" class="empty-state" hidden>
+          <strong>Nenhum resultado.</strong>
+          <span>Tente outro termo ou categoria.</span>
+        </div>
+      </section>
+
+      <section id="manifesto" class="manifesto section">
+        <div class="manifesto__inner reveal">
+          <p class="eyebrow">MANIFESTO / 02</p>
+          <h3>Menos ruído.<br><em>Mais ritual.</em></h3>
+          <p>NOIR nasceu da ideia de transformar uma categoria cotidiana em uma experiência de marca: curadoria, estética e atendimento em primeiro plano.</p>
+          <div class="values">
+            <div><span>01</span><strong>Curadoria</strong><small>Seleção pensada nos detalhes.</small></div>
+            <div><span>02</span><strong>Presença</strong><small>Uma identidade que não passa despercebida.</small></div>
+            <div><span>03</span><strong>Atendimento</strong><small>Informação clara e contato simples.</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section favorites-section">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">SEU ACERVO / 03</p><h3>Favoritos</h3></div>
+          <p>Salve itens para consultar depois.</p>
+        </div>
+        <div id="favoritesGrid" class="product-grid"></div>
+        <div id="favoritesEmpty" class="empty-state"><strong>Você ainda não salvou itens.</strong><span>Clique no coração de um produto para adicioná-lo aqui.</span></div>
+      </section>
+
+      <section id="contato" class="section contact">
+        <div class="contact__card reveal">
+          <div>
+            <p class="eyebrow">NOIR / ATENDIMENTO</p>
+            <h3>Presença local,<br><em>atitude própria.</em></h3>
+          </div>
+          <div class="contact__details">
+            <p><span>LOCAL</span><strong id="cityText">Sua cidade</strong></p>
+            <p><span>HORÁRIO</span><strong id="hoursText">Seg–Sáb · 09h–19h</strong></p>
+            <p><span>INSTAGRAM</span><strong id="instagramText">@sua_tabacaria</strong></p>
+          </div>
+          <div class="contact__actions">
+            <a id="mapLink" class="btn btn--primary" href="#" target="_blank" rel="noopener">Como chegar</a>
+            <a id="instagramLink" class="btn btn--ghost" href="#" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="brand"><span class="brand-mark">N</span><span>NOIR</span></div>
+      <span>© <span id="year"></span> NOIR TABACARIA</span>
+      <span>Conteúdo destinado a maiores de 18 anos.</span>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
